@@ -4,9 +4,9 @@
     {
         private List<TableObj> _table= new List<TableObj>
         {
-            new TableObj { Id = 1, Name = "Test1" },
-            new TableObj { Id = 2, Name = "Test2" },
-            new TableObj { Id = 3, Name = "Test3" },
+            new TableObj { Id = 1, UserId="11111111", Name = "Test1", Email="test1@gmail.com", Birthday="01/16/1996", Gender= "Male", Phone= "0545555555" },
+            new TableObj { Id = 2, UserId="22222222", Name = "Test2", Email="test2@gmail.com", Birthday="02/17/1998", Gender= "Female", Phone= "0545555555" },
+            new TableObj { Id = 3, UserId="33333333", Name = "Test3", Email="test3@gmail.com", Birthday="03/18/1999", Phone= "0545555555" },
         };
 
         public async Task<List<TableObj>> GetAll()

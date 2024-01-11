@@ -9,9 +9,23 @@ builder.Services.AddSwaggerGen();
 
 builder.Services.AddSingleton<ITableRepository, TableDataMock>();
 
-builder.Services.AddSingleton<ITableService, TableService>();
+builder.Services.AddScoped<ITableService, TableService>();
+
+var allowedOrigin = builder.Configuration.GetSection("AllowedOrigins").Get<string[]>();
+
+builder.Services.AddCors(options =>
+{
+    options.AddPolicy("myAppCors", policy =>
+    {
+        policy.WithOrigins(allowedOrigin)
+                .AllowAnyHeader()
+                .AllowAnyMethod();
+    });
+});
 
 var app = builder.Build();
+
+app.UseCors("myAppCors");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment())
