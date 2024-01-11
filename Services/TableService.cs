@@ -21,6 +21,11 @@ namespace TableBackend.Services
             return await _tableRepository.DeleteUser(id);
         }
 
+        public async Task<TableObj> AddUser(TableObj data)
+        {
+            return await _tableRepository.AddUser(data);
+        }
+
         //public async Task<TaskObj> AddTask(TaskObj task)
         //{
         //    return await _taskRepository.AddTask(task);

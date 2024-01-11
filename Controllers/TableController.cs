@@ -27,12 +27,12 @@ namespace TableBackend.Controllers
             return Ok(isDeleted);
         }
 
-        //[HttpPost("AddTask")]
-        //public async Task<ActionResult<TaskObj>> AddTask(TaskObj taskObj)
-        //{
-        //    TaskObj newTask = await _taskService.AddTask(taskObj);
-        //    return Ok(newTask);
-        //}
+        [HttpPost("AddUser")]
+        public async Task<ActionResult<TableObj>> AddUser([FromBody] TableObj tableObj)
+        {
+            TableObj newUser= await _tableService.AddUser(tableObj);
+            return Ok(newUser);
+        }
 
         //[HttpDelete("DeleteTask/{id}")]
         //public async Task<ActionResult<bool>> DeleteTask(int id)
