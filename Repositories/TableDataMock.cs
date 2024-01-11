@@ -24,6 +24,11 @@
             return _table;
         }
 
+        public Task<TableObj> UpdateUser(int id, TableObj data)
+        {
+            throw new NotImplementedException();
+        }
+
         //public async Task<TaskObj> GetTask(int id)
         //{
         //    return _tasks.SingleOrDefault(t => t.Id == id);

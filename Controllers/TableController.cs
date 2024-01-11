@@ -34,18 +34,11 @@ namespace TableBackend.Controllers
             return Ok(newUser);
         }
 
-        //[HttpDelete("DeleteTask/{id}")]
-        //public async Task<ActionResult<bool>> DeleteTask(int id)
-        //{
-        //    bool isDeleted = await _taskService.DeleteTask(id);
-        //    return Ok(isDeleted);
-        //}
-
-        //[HttpDelete("DeleteTasks")]
-        //public async Task<ActionResult<int>> DeleteTasks([FromBody] string ids)
-        //{
-        //    int deletedTasks = await _taskService.DeleteTasks(ids);
-        //    return Ok(deletedTasks);
-        //}
+        [HttpPut("UpdateUser/{id}")]
+        public async Task<ActionResult<TableObj>> UpdateUser(int id, [FromBody] TableObj tableObj)
+        {
+            TableObj updateUser = await _tableService.UpdateUser(id, tableObj);
+            return Ok(updateUser);
+        }
     }
 }
