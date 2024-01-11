@@ -7,7 +7,10 @@ builder.Services.AddControllers();
 builder.Services.AddEndpointsApiExplorer();
 builder.Services.AddSwaggerGen();
 
-builder.Services.AddSingleton<ITableRepository, TableDataMock>();
+builder.Services.AddScoped<DapperDBContext>();
+
+//builder.Services.AddSingleton<ITableRepository, TableDataMock>();
+builder.Services.AddScoped<ITableRepository, TableDataSql>();
 
 builder.Services.AddScoped<ITableService, TableService>();
 
