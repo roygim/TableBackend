@@ -9,6 +9,11 @@
             new TableObj { Id = 3, UserId="33333333", Name = "Test3", Email="test3@gmail.com", Birthday="03/18/1999", Phone= "0545555555" },
         };
 
+        public Task<bool> DeleteUser(int id)
+        {
+            throw new NotImplementedException();
+        }
+
         public async Task<List<TableObj>> GetAll()
         {
             return _table;

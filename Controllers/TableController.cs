@@ -20,6 +20,13 @@ namespace TableBackend.Controllers
             return Ok(data);
         }
 
+        [HttpDelete("DeleteUser/{id}")]
+        public async Task<ActionResult<bool>> DeleteUser(int id)
+        {
+            bool isDeleted = await _tableService.DeleteUser(id);
+            return Ok(isDeleted);
+        }
+
         //[HttpPost("AddTask")]
         //public async Task<ActionResult<TaskObj>> AddTask(TaskObj taskObj)
         //{

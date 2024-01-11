@@ -16,6 +16,11 @@ namespace TableBackend.Services
             return await _tableRepository.GetAll();
         }
 
+        public async Task<bool> DeleteUser(int id)
+        {
+            return await _tableRepository.DeleteUser(id);
+        }
+
         //public async Task<TaskObj> AddTask(TaskObj task)
         //{
         //    return await _taskRepository.AddTask(task);

@@ -13,11 +13,22 @@ namespace TableBackend.Repositories
 
         public async Task<List<TableObj>> GetAll()
         {
-            string query = "Select * From tbl_Users";
+            string query = "select * from tbl_Users";
             using (var connectin = _context.CreateConnection())
             {
                 var users = await connectin.QueryAsync<TableObj>(query);
                 return users.ToList();
+            }
+        }
+
+        public async Task<bool> DeleteUser(int id)
+        {
+            string query = "delete from tbl_Users where Id=@id";
+
+            using (var connectin = _context.CreateConnection())
+            {
+                await connectin.ExecuteAsync(query, new { id });
+                return true;
             }
         }
 
